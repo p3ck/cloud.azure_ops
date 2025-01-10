@@ -70,6 +70,20 @@ argument_specs:
               - The image used to build the VM. For custom images, the name of the image. To narrow the search to a specific resource group, a dict with the keys name and resource_group.
               - For Marketplace images, a dict with the keys publisher, offer, sku, and version.
               - Set O(version=latest) to get the most recent version of a given image.
+          managed_disk_type:
+            type: "str"
+            description:
+              - Managed OS disk type.
+              - Create OS disk with managed disk if defined.
+              - If not defined, the OS disk will be created with virtual hard disk (VHD).
+            choices:
+              - "Standard_LRS"
+              - "StandardSSD_LRS"
+              - "StandardSSD_ZRS"
+              - "Premium_LRS"
+              - "Premium_ZRS"
+              - "UltraSSD_LRS"
+            required: false
           ssh_pw_enabled:
             description: Enable/disable SSH passwords.
             choices: ['yes', 'no']
@@ -93,8 +107,6 @@ argument_specs:
             description:
               - Initial disk size in GB for blank data disks. Cannot be larger than 1023 GB.
               - Can only be modified when VM is deallocated.
-          managed_disk_type:
-            description: Managed data disk type.
           storage_account_name:
             description: Name of an existing storage account that supports creation of VHD blobs.
           storage_blob_name:

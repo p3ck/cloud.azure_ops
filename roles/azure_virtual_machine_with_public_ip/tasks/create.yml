@@ -131,6 +131,7 @@
     vm_size: "{{ azure_virtual_machine_with_public_ip_vm.size | default(omit) }}"
     network_interfaces: "{{ azure_virtual_machine_with_public_ip_vm.network_interfaces | default(vm_name) }}"
     os_type: "{{ azure_virtual_machine_with_public_ip_vm.os | default(omit) }}"
+    managed_disk_type: "{{ azure_virtual_machine_with_public_ip_vm.managed_disk_type | default(omit) }}"
     availability_set: "{{ azure_virtual_machine_with_public_ip_availability_set.name | default(omit) }}"
     image: "{{ azure_virtual_machine_with_public_ip_vm.image | default(omit) }}"
     admin_username: "{{ azure_virtual_machine_with_public_ip_vm.admin_username | default(omit) }}"
