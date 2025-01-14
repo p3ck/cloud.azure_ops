@@ -17,6 +17,7 @@ tags:
   - infrastructure
 dependencies:
   azure.azcollection: '*'
+  community.crypto: '2.9.0'
 build_ignore:
   - '.tox'
   - '.git'
